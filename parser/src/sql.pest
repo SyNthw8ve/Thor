@@ -10,3 +10,6 @@ column_name = @{ identifier }
 integer        = @{ ASCII_DIGIT+ }
 float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
 string_literal = @{ "'" ~ (!"'" ~ ANY)* ~ "'" }
+
+WHITESPACE = _{ " " }
+COMMENT = _{ "--" ~ (!"\n" ~ ANY)* ~ "\n" }
