@@ -1,1 +1,4 @@
 identifier = @{ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
+
+table_name  = @{ identifier }
+column_name = @{ identifier }
