@@ -10,6 +10,11 @@ column_name = @{ identifier }
 integer        = @{ ASCII_DIGIT+ }
 float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
 string_literal = @{ "'" ~ (!"'" ~ ANY)* ~ "'" }
+
+select_statement = {
+    select ~ (columns_list | "*") ~ from ~ table_name
+}
+
 columns_list = { (table_name ~ ".")? ~ column_name ~ ("," ~ (table_name ~ ".")? ~ column_name)* }
 
 WHITESPACE = _{ " " }
