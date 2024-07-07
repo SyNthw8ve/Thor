@@ -2,3 +2,7 @@ identifier = @{ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
 
 table_name  = @{ identifier }
 column_name = @{ identifier }
+
+integer        = @{ ASCII_DIGIT+ }
+float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
+string_literal = @{ "'" ~ (!"'" ~ ANY)* ~ "'" }
