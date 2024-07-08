@@ -14,6 +14,7 @@ table_name  = @{ identifier }
 from_table_name  = { (schema_name ~ ".")? ~ identifier }
 column_name = { (table_name ~ ".")? ~ identifier }
 column_all = { (table_name ~ ".")? ~ all }
+alias = { as ~ identifier }
 
 integer        = @{ ASCII_DIGIT+ }
 float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
