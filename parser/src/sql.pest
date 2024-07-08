@@ -21,7 +21,7 @@ float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
 string_literal = @{ "'" ~ (!"'" ~ ANY)* ~ "'" }
 
 select_statement = {
-    select ~ (columns_list | "*") ~ from ~ table_name
+    select ~ columns_list ~ from ~ from_table_name
 }
 
 columns_list = { (column_name ~ alias? | column_all) ~ ("," ~ (column_name ~ alias? | column_all) )* }
