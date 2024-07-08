@@ -10,7 +10,8 @@ identifier = @{ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
 
 schema_name  = @{ identifier }
 table_name  = @{ identifier }
-column_name = @{ identifier }
+
+from_table_name  = { (schema_name ~ ".")? ~ identifier }
 
 integer        = @{ ASCII_DIGIT+ }
 float          = @{ ASCII_DIGIT+ ~ "." ~ ASCII_DIGIT+ }
