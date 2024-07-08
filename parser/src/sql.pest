@@ -1,3 +1,5 @@
+query = _{ SOI ~ WHITESPACE* ~ select_statement ~ WHITESPACE* ~ EOI }
+
 select      = { ^"select" }
 from        = { ^"from" }
 where       = { ^"where" }
