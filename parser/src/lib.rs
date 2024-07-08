@@ -1,14 +1,14 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use pest::Parser;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(pest_derive::Parser)]
+#[grammar = "sql.pest"]
+struct SQlParser;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+
+pub fn parse(source: &str) {
+
+    let pairs = SQlParser::parse(Rule::query, source);
+    for pair in pairs {
+        println!("Rule:    {:?}", pair);        
     }
 }
