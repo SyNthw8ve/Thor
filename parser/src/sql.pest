@@ -24,7 +24,7 @@ select_statement = {
     select ~ (columns_list | "*") ~ from ~ table_name
 }
 
-columns_list = { (table_name ~ ".")? ~ column_name ~ ("," ~ (table_name ~ ".")? ~ column_name)* }
+columns_list = { (column_name ~ alias? | column_all) ~ ("," ~ (column_name ~ alias? | column_all) )* }
 
 WHITESPACE = _{ " " }
 COMMENT = _{ "--" ~ (!"\n" ~ ANY)* ~ "\n" }
