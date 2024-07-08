@@ -8,6 +8,7 @@ all        = { ^"*" }
 
 identifier = @{ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
 
+schema_name  = @{ identifier }
 table_name  = @{ identifier }
 column_name = @{ identifier }
 
