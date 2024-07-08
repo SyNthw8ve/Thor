@@ -1,8 +1,10 @@
 query = _{ SOI ~ WHITESPACE* ~ select_statement ~ WHITESPACE* ~ EOI }
 
 select      = { ^"select" }
+as         = { ^"as" }
 from        = { ^"from" }
 where       = { ^"where" }
+all        = { ^"*" }
 
 identifier = @{ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
 
